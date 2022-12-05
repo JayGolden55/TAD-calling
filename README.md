@@ -34,7 +34,7 @@ Due to its usage of next-generation sequencing, Hi-C has the highest through-put
 ## The Hi-C Process
 Now that we have discussed why Hi-C is helpful for the discovery of TADs, let’s take a look at a brief overview of the steps that make up the Hi-C process.
 ![Hi-C Steps](./Hi-C_Steps.jpg)
-*Overview of Hi-C (Lieberman-Aiden et al.)*
+*Overview of Hi-C [10]*
 
 1. Crosslink the cells with formaldehyde in order to stabilize the chromosomal interactions.
 2. Digest the chromatin with a restriction enzyme (usually HindIII or EcoRI).
@@ -72,31 +72,31 @@ Once Hi-C data has been processed, the result is a binned genome-wide interactio
 
 ### Theoretical Basis
 ![alt text](https://github.com/JayGolden55/TAD-calling/blob/main/tad_domains.png)
-*Relationship between Hi-C contact matrix elements and structural elements of chromatin []*
+*Relationship between Hi-C contact matrix elements and structural elements of chromatin [12]*
 
 All methods for determining TADs attempt to locate regions in which multiple contacts between genomic regions
 occur that are otherwise isolated from other regions containing distal genomic contacts. On a Hi-C map, this can be seen
 as a checkered board, in which the total region is the TAD, isolated from other high contact frequency regions, and each individual
 checkered square indicates a high contact interaction between two distal genomic regions. A good algorithm for accurately 
 determining TADs from a Hi-C map should be able to both determine all highly contacted regions and determine the borders
-between isolated regions to accurately showcase real compartments in the chromatin structure. Since TADs vary in size  
+between isolated regions to accurately showcase real compartments in the chromatin structure. [13] Since TADs vary in size  
 and number of sub-compartments, approaches to categorize often face various challenges specific to the region being analyzed,
 with different algorithms having greater or worse success depending on the area of interest. Approaches vary in their use
 of computational techniques, with some centered around probabilistic computations, others utilizing HMMs, and others 
-utilizing clustering based approaches.
+utilizing clustering based approaches. [13]
 
 ## Some approaches
 
 ### Arrowhead Matrix
 ![alt text](https://github.com/JayGolden55/TAD-calling/blob/main/arrowhead_mat.png)
-*Transformation of contact map to arrowhead matrix []*
+*Transformation of contact map to arrowhead matrix [12]*
 
 
 Transformation of the Hi-C contact map to an arrowhead matrix gives a probabilistic estimate of the likelihood a region is within
 a TAD. For every position in the matrix $i,i+d$ where $d$ is some predefined distance, the value in the arrowhead matrix is computed as
 $$A_{i,i+d}=\frac{M_{i,i-d}-M_{i,i+d}}{M_{i,i-d}+M_{i,i+d}}=1-\frac{2*M_{i,i+d}}{M_{i,i+d}+M_{i,i-d}}$$
 Where $A_{x,y}$ is the value of the position $x,y$ in the arrowhead matrix and $M_{x,y}$ is the value of the position $x,y$ in the contact
-matrix. This can be understood as the observed contact frequency over the expected contact frequency based on the related positions. If the value is high
+matrix. [12] This can be understood as the observed contact frequency over the expected contact frequency based on the related positions. If the value is high
 the observed contact frequency cannot be reasonably explained by the related region, implying the relationship is significant and that the position of interest
 is within a TAD. Once the transformation is applied to the entire matrix, high positive "arrows" indicate the region is 
 within a TAD and are kept isolated from other regions.
@@ -104,7 +104,7 @@ within a TAD and are kept isolated from other regions.
 ### Clustering
 ![alt text](https://github.com/JayGolden55/TAD-calling/blob/main/clusters.png)
 
-*Contacts from Hi-C contact map, shown on right, are associated with specific clusters with different likelihoods []*
+*Contacts from Hi-C contact map, shown on right, are associated with specific clusters with different likelihoods [12]*
 
 As the output of a Hi-C analysis is the locations of high-contact frequency regions, a TAD can be thought of as a collection of closely
 related regions, making clustering a reasonable approach to organizing the contacts. K-means clustering attempts to group the 
@@ -132,16 +132,16 @@ by which level of clustering they want to examine.
 
 [6] Barrington, C., Georgopoulou, D., Pezic, D. et al. Enhancer accessibility and CTCF occupancy underlie asymmetric TAD architecture and cell type specific genome topology. Nat Commun 10, 2908 (2019). https://doi.org/10.1038/s41467-019-10725-9
 
-Zufferey, M., Tavernari, D., Oricchio, E. et al. Comparison of computational methods for the identification of topologically associating domains. Genome Biol 19, 217 (2018). https://doi.org/10.1186/s13059-018-1596-9
+[7] Denker, Annette, and Wouter de Laat. “The second decade of 3C technologies: detailed insights into nuclear organization.” Genes & development vol. 30,12 (2016): 1357-82. doi:10.1101/gad.281964.116
 
-Rao, Suhas S P et al. “A 3D map of the human genome at kilobase resolution reveals principles of chromatin looping.” Cell vol. 159,7 (2014): 1665-80. doi:10.1016/j.cell.2014.11.021
+[8] Han, J., Zhang, Z. & Wang, K. 3C and 3C-based techniques: the powerful tools for spatial genome organization deciphering. Mol Cytogenet 11, 21 (2018). https://doi.org/10.1186/s13039-018-0368-2
 
-Denker, Annette, and Wouter de Laat. “The second decade of 3C technologies: detailed insights into nuclear organization.” Genes & development vol. 30,12 (2016): 1357-82. doi:10.1101/gad.281964.116
+[9] van Berkum, Nynke L et al. “Hi-C: a method to study the three-dimensional architecture of genomes.” Journal of visualized experiments : JoVE ,39 1869. 6 May. 2010, doi:10.3791/1869
 
-Han, J., Zhang, Z. & Wang, K. 3C and 3C-based techniques: the powerful tools for spatial genome organization deciphering. Mol Cytogenet 11, 21 (2018). https://doi.org/10.1186/s13039-018-0368-2
+[10] Lieberman-Aiden, Erez et al. “Comprehensive mapping of long-range interactions reveals folding principles of the human genome.” Science (New York, N.Y.) vol. 326,5950 (2009): 289-93. doi:10.1126/science.1181369
 
-van Berkum, Nynke L et al. “Hi-C: a method to study the three-dimensional architecture of genomes.” Journal of visualized experiments : JoVE ,39 1869. 6 May. 2010, doi:10.3791/1869
+[11] Lajoie, Bryan R et al. “The Hitchhiker's guide to Hi-C analysis: practical guidelines.” Methods (San Diego, Calif.) vol. 72 (2015): 65-75. doi:10.1016/j.ymeth.2014.10.031
 
-Lieberman-Aiden, Erez et al. “Comprehensive mapping of long-range interactions reveals folding principles of the human genome.” Science (New York, N.Y.) vol. 326,5950 (2009): 289-93. doi:10.1126/science.1181369
+[12] Zufferey, M., Tavernari, D., Oricchio, E. et al. Comparison of computational methods for the identification of topologically associating domains. Genome Biol 19, 217 (2018). https://doi.org/10.1186/s13059-018-1596-9
 
-Lajoie, Bryan R et al. “The Hitchhiker's guide to Hi-C analysis: practical guidelines.” Methods (San Diego, Calif.) vol. 72 (2015): 65-75. doi:10.1016/j.ymeth.2014.10.031
+[13] Rao, Suhas S P et al. “A 3D map of the human genome at kilobase resolution reveals principles of chromatin looping.” Cell vol. 159,7 (2014): 1665-80. doi:10.1016/j.cell.2014.11.021
