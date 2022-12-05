@@ -19,7 +19,7 @@ Recent studies in single-cell Hi-C and high-resolution microscopy data revealed 
 
 In summary, understanding the formation and effects of TAD structures will help us understand chromatin dynamics and gene regulations, and potentially provide insights into treatments of diseases.
 
-# References
+## References
 
 [1] Beagan, J.A., Phillips-Cremins, J.E. On the existence and functionality of topologically associating domains. Nat Genet 52, 8–16 (2020). https://doi.org/10.1038/s41588-019-0561-1
 
