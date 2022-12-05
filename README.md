@@ -11,11 +11,13 @@ The majority of observed interactions between promoters and enhancers do not cro
 
 Divergent CTCF sites were found to be enriched at TAD boundaries. One of the proposed mechanisms for the formation of TADS was loop extrusion. In this mechanism, cohesins extrude DNA loops until encounter divergent CTCF sites [4]. DNA sequences on the loop self interact more than interacting with sequences out of the loop. 
 
-![alt text](https://ars.els-cdn.com/content/image/1-s2.0-S0955067420300570-gr1_lrg.jpg)
+![alt text](https://github.com/Beijia-Yuan/TAD-calling/blob/main/final-image1.jpg)
+*CTCF binding sites and chromatin marks enriched at TAD boundaries [6] and a model for loop extrusion and extrusion-based chromosome organization [4]*
 
 Recent studies in single-cell Hi-C and high-resolution microscopy data revealed that TAD-like structures were also present on the single-cell level. However, the TAD-like structures are highly variable from cell to cell, with a non-zero boundary probability across the genome. Moreover, single-cell level TAD-like structures were observed in cohesion-depleted cells whereas ensemble-averaged TAD structures disappeared in bulk Hi-C data [5]. This indicated that loop extrusion is not sufficient to explain TAD formations. Other mechanisms such as thermodynamic models of phase separations were proposed. 
 
 ![alt text](https://github.com/Beijia-Yuan/TAD-calling/blob/main/final-image2.JPG)
+*image_caption*
 
 In summary, understanding the formation and effects of TAD structures will help us understand chromatin dynamics and gene regulations, and potentially provide insights into treatments of diseases.
 
@@ -30,3 +32,5 @@ In summary, understanding the formation and effects of TAD structures will help 
 [4] Banigan, E. J., & Mirny, L. A. (2020). Loop extrusion: theory meets single-molecule experiments. Current opinion in cell biology, 64, 124–138. https://doi.org/10.1016/j.ceb.2020.04.011 
 
 [5] Conte, M., Fiorillo, L., Bianco, S. et al. Polymer physics indicates chromatin folding variability across single-cells results from state degeneracy in phase separation. Nat Commun 11, 3289 (2020). https://doi.org/10.1038/s41467-020-17141-4 
+
+[6] Barrington, C., Georgopoulou, D., Pezic, D. et al. Enhancer accessibility and CTCF occupancy underlie asymmetric TAD architecture and cell type specific genome topology. Nat Commun 10, 2908 (2019). https://doi.org/10.1038/s41467-019-10725-9
