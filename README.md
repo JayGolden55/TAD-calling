@@ -85,7 +85,7 @@ by which level of clustering they want to examine.
 
 [6] Barrington, C., Georgopoulou, D., Pezic, D. et al. Enhancer accessibility and CTCF occupancy underlie asymmetric TAD architecture and cell type specific genome topology. Nat Commun 10, 2908 (2019). https://doi.org/10.1038/s41467-019-10725-9
 
-Zufferey, M., Tavernari, D., Oricchio, E. et al. Comparison of computational methods for the identification of topologically associating domains. Genome Biol 19, 217 (2018). https://doi.org/10.1186/s13059-018-1596-9
+[7] Zufferey, M., Tavernari, D., Oricchio, E. et al. Comparison of computational methods for the identification of topologically associating domains. Genome Biol 19, 217 (2018). https://doi.org/10.1186/s13059-018-1596-9
 
-Rao, Suhas S P et al. “A 3D map of the human genome at kilobase resolution reveals principles of chromatin looping.” Cell vol. 159,7 (2014): 1665-80. doi:10.1016/j.cell.2014.11.021
+[8] Rao, Suhas S P et al. “A 3D map of the human genome at kilobase resolution reveals principles of chromatin looping.” Cell vol. 159,7 (2014): 1665-80. doi:10.1016/j.cell.2014.11.021
 
